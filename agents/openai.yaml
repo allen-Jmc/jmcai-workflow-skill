@@ -1,0 +1,4 @@
+interface:
+  display_name: "JMCAI 工作流配置助手"
+  short_description: "把 ComfyUI API 工作流配置为 JMCAI 实验室预设"
+  default_prompt: "Use $jmcai-workflow-skill to analyze this ComfyUI API workflow JSON and prepare a JMCAI Workflow Lab preset."

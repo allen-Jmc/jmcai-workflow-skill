@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "skill": "jmcai-workflow-skill",
+  "runtime": {
+    "intentType": "JMCAI_WORKFLOW_INTENT_V1",
+    "nodeEngine": ">=20",
+    "corePackage": "jmcai-comfypro-v10",
+    "coreVersion": "10.0.48"
+  },
+  "bundle": {
+    "path": "scripts/lib/core-agent-runtime.mjs",
+    "sha256": "abb9e88c8ddef825074b7ceef6fd27c872e79a8cb704215a3c112119763d323b",
+    "bytes": 48275
+  },
+  "sources": {
+    "fingerprint": "c6d0d8357c28835aa1cffd96db5663ad839cba6c99b033dced75422d5e0a184f",
+    "files": [
+      {
+        "path": "src/services/cloudSync/canonical.ts",
+        "sha256": "180b24d15d5d96745aa3e222e4d11e2824291fb0728673faf32b7b401c9ab34c"
+      },
+      {
+        "path": "src/services/cloudSync/sanitizers.ts",
+        "sha256": "df46c9b12deaea048ca67a937e48e8d0e6e9bafc60dbb63516b1c793b43aaad9"
+      },
+      {
+        "path": "src/services/workflow/outputMapping.ts",
+        "sha256": "a7a1165cfc87fdceb30bccb06b577b532bcc614b48885e8c699dc9e564fc16df"
+      },
+      {
+        "path": "src/services/workflow/presetCompat.ts",
+        "sha256": "29b08d0cfc9b7dfce16ad9e81667d94bbc8deb5621e9ae3ad838fec9cb891eca"
+      },
+      {
+        "path": "src/services/workflow/uiConfigInference.ts",
+        "sha256": "e02810fb781fc6b13a11ba625d70dfdd893ba7077dc9e73112a602f85f4c7fd7"
+      },
+      {
+        "path": "src/services/workflow/utils.ts",
+        "sha256": "e44347980fbdc5ae1bc9ceae12849e5add93c61dc6058cd6c59858a9c7410595"
+      },
+      {
+        "path": "src/services/workflow/validator.ts",
+        "sha256": "ef40964c8c28735e38b5fca7a661c122185b7d7517417932427e84ba21c0502c"
+      },
+      {
+        "path": "src/services/workflow/workflowLabAgentCompiler.ts",
+        "sha256": "fbb965a14d0bd5a2583a535f251d724cc8d3ac69972cd3353392878b064f3f04"
+      },
+      {
+        "path": "src/services/workflow/workflowLabAgentContract.ts",
+        "sha256": "f10ec101be0b4aa4365bceee6d32866627f4112511e6cd5e93aa937e5130099d"
+      },
+      {
+        "path": "src/types.ts",
+        "sha256": "c4a9aa017cdf2444b40fcab93cc6b7f80336f7a99f0234fbe207a05c1afca046"
+      }
+    ],
+    "shims": [
+      {
+        "path": "scripts/runtime-shims/comfyMetadataService.mjs",
+        "sha256": "472ea542c23f2f86b2851362aa8cf17d05ce2fdffde2bf351ba9c3c453b8247b"
+      }
+    ]
+  },
+  "generatedBy": "scripts/sync-core-runtime.mjs"
+}

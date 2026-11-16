@@ -1,0 +1,58 @@
+{
+  "1": {
+    "class_type": "CLIPTextEncode",
+    "inputs": { "text": "first prompt" }
+  },
+  "2": {
+    "class_type": "CLIPTextEncode",
+    "inputs": { "text": "first negative" }
+  },
+  "3": {
+    "class_type": "EmptyLatentImage",
+    "inputs": { "width": 512, "height": 512, "batch_size": 1 }
+  },
+  "4": {
+    "class_type": "KSampler",
+    "_meta": { "title": "采样器 A" },
+    "inputs": {
+      "seed": 1,
+      "steps": 20,
+      "cfg": 7,
+      "positive": ["1", 0],
+      "negative": ["2", 0],
+      "latent_image": ["3", 0]
+    }
+  },
+  "5": {
+    "class_type": "SaveImage",
+    "inputs": { "images": ["4", 0] }
+  },
+  "11": {
+    "class_type": "CLIPTextEncode",
+    "inputs": { "text": "second prompt" }
+  },
+  "12": {
+    "class_type": "CLIPTextEncode",
+    "inputs": { "text": "second negative" }
+  },
+  "13": {
+    "class_type": "EmptyLatentImage",
+    "inputs": { "width": 512, "height": 512, "batch_size": 1 }
+  },
+  "14": {
+    "class_type": "KSampler",
+    "_meta": { "title": "采样器 B" },
+    "inputs": {
+      "seed": 2,
+      "steps": 20,
+      "cfg": 7,
+      "positive": ["11", 0],
+      "negative": ["12", 0],
+      "latent_image": ["13", 0]
+    }
+  },
+  "15": {
+    "class_type": "SaveImage",
+    "inputs": { "images": ["14", 0] }
+  }
+}

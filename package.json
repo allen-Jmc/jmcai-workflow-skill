@@ -1,0 +1,18 @@
+{
+  "name": "jmcai-workflow-skill",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Codex Skill for configuring ComfyUI API workflows as JMCAI Workflow Lab presets",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "doctor": "node scripts/jmcai-workflow.mjs doctor",
+    "test": "node --test",
+    "sync:core-runtime": "node scripts/sync-core-runtime.mjs"
+  },
+  "devDependencies": {
+    "esbuild": "0.25.12"
+  }
+}
