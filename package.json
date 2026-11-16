@@ -4,6 +4,15 @@
   "private": true,
   "type": "module",
   "description": "Codex Skill for configuring ComfyUI API workflows as JMCAI Workflow Lab presets",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/allen-Jmc/jmcai-workflow-skill.git"
+  },
+  "homepage": "https://github.com/allen-Jmc/jmcai-workflow-skill#readme",
+  "bugs": {
+    "url": "https://github.com/allen-Jmc/jmcai-workflow-skill/issues"
+  },
   "engines": {
     "node": ">=20"
   },

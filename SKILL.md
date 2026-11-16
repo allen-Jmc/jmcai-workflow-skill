@@ -23,11 +23,12 @@ Help the user turn one ComfyUI API-format workflow JSON into a JMCAI Workflow La
 - A JMCAI build that includes the Workflow Lab Agent bridge.
 - The app and CLI must be able to see the same bridge directory. The default is `~/JMCAI/workflow-lab-agent-bridge`.
 - On Web, the user must authorize that directory in the app's storage settings. On desktop, choose the same directory.
+- If the app uses a non-default bridge, pass the exact same path with `--bridge-dir "<bridge-dir>"` to `doctor`, `prepare`, `install`, and `verify`.
 
 Run `doctor` first when the environment is unknown:
 
 ```bash
-node scripts/jmcai-workflow.mjs doctor
+node scripts/jmcai-workflow.mjs doctor --bridge-dir "<bridge-dir>"
 ```
 
 ## Workflow
@@ -40,7 +41,7 @@ node scripts/jmcai-workflow.mjs doctor
    node scripts/jmcai-workflow.mjs analyze <workflow.json>
    ```
 
-   Read `references/workflow-mapping.md` if the result needs human interpretation or has ambiguities.
+   Read [references/workflow-mapping.md](references/workflow-mapping.md) if the result needs human interpretation or has ambiguities.
 
 4. Present one compact proposal in the user's language:
    - suggested mode and why;
@@ -61,12 +62,14 @@ node scripts/jmcai-workflow.mjs doctor
    node scripts/jmcai-workflow.mjs compile <intent.json>
    ```
 
+   Add `--bridge-dir "<bridge-dir>"` to `prepare` when the app uses a non-default bridge.
+
    If the user requested extra controls or a candidate override, pass a complete `--mapping` file. If `compile` materially changes the confirmed mapping, ask again before installing.
 
 6. Install only after the confirmation:
 
    ```bash
-   node scripts/jmcai-workflow.mjs install <intent.json>
+   node scripts/jmcai-workflow.mjs install <intent.json> --bridge-dir "<bridge-dir>"
    ```
 
    A `queued` result means the app is open or has an undeployed draft. Explain that the job is waiting; do not claim success. After the user closes the lab or resolves the draft, run `verify` with the returned job ID.
@@ -84,6 +87,6 @@ node scripts/jmcai-workflow.mjs doctor
 
 ## References
 
-- `references/workflow-mapping.md`: graph analysis, core mappings, common control and ambiguity rules.
-- `references/intent-contract.md`: intent shape, hashes, modes, outputs, and bridge semantics.
-- `references/troubleshooting.md`: app bridge, WSL/Windows paths, queued jobs, and compatibility.
+- [references/workflow-mapping.md](references/workflow-mapping.md): graph analysis, core mappings, common control and ambiguity rules.
+- [references/intent-contract.md](references/intent-contract.md): intent shape, hashes, modes, outputs, and bridge semantics.
+- [references/troubleshooting.md](references/troubleshooting.md): app bridge, WSL/Windows paths, queued jobs, and compatibility.
